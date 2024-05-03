@@ -1,0 +1,145 @@
+{
+  "name" : "CopyToChild-Offshore-1714744032266",
+  "sourceOrgId" : "0hpCzyGi4kwevHQmpHex4i",
+  "sourceOrgName" : "WPP Group - WrikeIntegrationOrg",
+  "exportedObjects" : [ {
+    "objectGuid" : "6XRnIr5qND7lx9vvYyOkKJ",
+    "objectName" : "WrikeNativeAPI-Connection",
+    "objectType" : "AI_CONNECTION",
+    "path" : "/Explore/WrikeNativeAPI/Connections",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "ARW8UBM7zsZvEIA-gt-76032803-2024-04-30T10:50:37.432Z::conn.xml"
+      },
+      "objectRefs" : [ "6gB9cOFW8aFkSfwfmu7cyv" ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "7eMlDhDBsytff4UoJXkewW",
+    "objectName" : "CopyToChild-Offshore",
+    "objectType" : "PROCESS",
+    "path" : "/Explore/WrikeAutomation-Nexus",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "htghGZ5i4rswVYx-gt-95538440-2024-05-03T06:09:01.148Z::pd.xml"
+      },
+      "objectRefs" : [ "6XRnIr5qND7lx9vvYyOkKJ" ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "a0UBTCoQfWrfl8tLrZJmiV",
+    "objectName" : "Services",
+    "objectType" : "Folder",
+    "path" : "/Explore/WrikeNativeAPI",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "6Hmrgwofrk2dMci3uUvAy3",
+    "objectName" : "WrikeAutomation-Nexus",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Wrike automation for Nexus spaces",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "7pl8MxXh7dngkxkHnvCLm4",
+    "objectName" : "WrikeNativeAPI",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "fSLfbcMmOyxb6zd6vwmDAR",
+    "objectName" : "Connections",
+    "objectType" : "Folder",
+    "path" : "/Explore/WrikeNativeAPI",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "6gB9cOFW8aFkSfwfmu7cyv",
+    "objectName" : "Wrike-APIs",
+    "objectType" : "AI_SERVICE_CONNECTOR",
+    "path" : "/Explore/WrikeNativeAPI/Services",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "joxMXdzWztZK0CY-gt-67351941-2024-04-29T07:44:39.149Z::svc.xml"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  } ]
+}

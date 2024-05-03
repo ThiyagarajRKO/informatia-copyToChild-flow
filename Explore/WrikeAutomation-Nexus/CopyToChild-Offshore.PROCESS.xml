@@ -1,0 +1,317 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>htghGZ5i4rswVYx-gt-95538440-2024-05-03T06:09:01.148Z::pd.xml</types1:EntryId>
+      <types1:Name>CopyToChild-Offshore</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>thiyagaraj.1@wpp.com</types1:CreatedBy>
+      <types1:CreationDate>2024-05-03T06:09:01Z</types1:CreationDate>
+      <types1:ModifiedBy>thiyagaraj.1@wpp.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-05-03T13:44:41Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>thiyagaraj.1@wpp.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-05-03T13:44:44Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.CopyToChild-Offshore/CopyToChild-Offshore.pd.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="CopyToChild-Offshore"
+                  name="CopyToChild-Offshore"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="ids" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="test_date" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="updateData" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="isCopyToChildAvailable" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">false</option>
+                  </options>
+               </field>
+               <field description="" name="folderTaskIds" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$type:string</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="guid"/>
+                  </options>
+               </field>
+               <field description="" name="taskTempToken" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="i854cf719-3742-4d14-b328-39941c10adfc">
+               <start id="xcfb013fa-b2c4-440e-984f-9143cc172795">
+                  <link id="xe1e65691-561b-4f78-98e8-ca446a344277"
+                        targetId="a17eMlDhDBsytff4UoJXkewW-Serviceca00a11d-8fab-40f0-8f88-d376a87c4fc0"/>
+               </start>
+               <service id="a17eMlDhDBsytff4UoJXkewW-Serviceca00a11d-8fab-40f0-8f88-d376a87c4fc0">
+                  <title>ConvertAPIId</title>
+                  <serviceName>WrikeNativeAPI-Connection:ConvertAPIId</serviceName>
+                  <serviceGUID>6XRnIr5qND7lx9vvYyOkKJ</serviceGUID>
+                  <serviceInput>
+                     <parameter name="type" source="constant">ApiV2Folder</parameter>
+                     <parameter name="ids" source="field">input.ids</parameter>
+                  </serviceInput>
+                  <link id="fa1f8340e-85cc-418d-a0ee-88c5703af72a"
+                        targetId="a17eMlDhDBsytff4UoJXkewW-Service9e45214d-5dee-4fbf-9466-6352a3954f04"/>
+               </service>
+               <service id="a17eMlDhDBsytff4UoJXkewW-Service9e45214d-5dee-4fbf-9466-6352a3954f04">
+                  <title>GetFolderById</title>
+                  <serviceName>WrikeNativeAPI-Connection:GetFolderById</serviceName>
+                  <serviceGUID>6XRnIr5qND7lx9vvYyOkKJ</serviceGUID>
+                  <serviceInput>
+                     <parameter name="folder_idPathParam" source="field">output.root[1]/data[1]/id</parameter>
+                  </serviceInput>
+                  <link id="ibc7c274b-8afb-486b-8749-422cf408bf9c"
+                        targetId="a17eMlDhDBsytff4UoJXkewW-lvqapvvq"/>
+               </service>
+               <assignment id="a17eMlDhDBsytff4UoJXkewW-lvqapvvq">
+                  <title>loop_customFields</title>
+                  <operation source="formula" to="temp.isCopyToChildAvailable">
+                     <expression language="XQuery">let $customFields := $output.folder_output[1]/data[1]/customFields
+
+let $output := (
+for $object in $customFields
+where $object/id = "IEABCEFLJUAEF4SP" and $object/value = "Overwrite"
+return "true"
+)
+
+return (
+	if ($output = "true") then
+    	"true"
+    else
+     	"false"
+)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.updateData">
+                     <expression language="XQuery">(: Initialize the variable output.final_copytoChild :)
+let $customFields := $output.folder_output[1]/data[1]/customFields
+
+(: Initialize the variable output.final_copytoChild :)
+let $output_final_copytoChild := "false"
+
+(: Construct the array of objects based on conditions :)
+let $output :=
+    for $object in $customFields
+    return
+        if ($object/id = "IEABCEFLJUAEF4AI" or
+            $object/id = "IEABCEFLJUAEF4AK" or
+            $object/id = "IEABCEFLJUAEGZFK" or
+            $object/id = "IEABCEFLJUAEGZFO") then
+            &lt;object&gt;
+                {$object/id}
+                {$object/value}
+            &lt;/object&gt;
+        else 
+            ()
+
+(: Return the array of objects :)
+return $output
+</expression>
+                  </operation>
+                  <operation source="formula" to="output.test_date">
+                     <expression language="XQuery">let $currentDateTime := current-dateTime()
+let $fourMonthsAgo := $currentDateTime - xs:dayTimeDuration('P120D')
+
+let $start := format-dateTime($fourMonthsAgo, "[Y0001]-[M01]-[D01]T00:00:00Z")
+let $end := format-dateTime($currentDateTime, "[Y0001]-[M01]-[D01]T00:00:00Z")
+
+return
+  &lt;object&gt;
+    &lt;start&gt;{$start}&lt;/start&gt;
+    &lt;end&gt;{$end}&lt;/end&gt;
+  &lt;/object&gt;</expression>
+                  </operation>
+                  <link id="y18a8b320-1ec6-4638-8ebe-8e340444528b"
+                        targetId="a17eMlDhDBsytff4UoJXkewW-lvqapvzd"/>
+               </assignment>
+               <container id="a17eMlDhDBsytff4UoJXkewW-lvqapvzd" type="exclusive">
+                  <title>isCopyToChildAvailable</title>
+                  <flow id="g6f5faa1f-9ffd-46ef-a004-3aa1805f6b60">
+                     <service id="a17eMlDhDBsytff4UoJXkewW-lvqapw02">
+                        <title>QueryTasksByFolderId</title>
+                        <serviceName>WrikeNativeAPI-Connection:QueryTasksByFolderId</serviceName>
+                        <serviceGUID>6XRnIr5qND7lx9vvYyOkKJ</serviceGUID>
+                        <serviceInput>
+                           <parameter name="folder_idPathParam" source="constant">{$output.root[1]/data[1]/id}</parameter>
+                           <parameter name="subTasks" source="constant">true</parameter>
+                           <parameter name="pageSize" source="constant">20</parameter>
+                           <parameter name="nextPageToken" source="field" updatable="true">temp.taskTempToken</parameter>
+                        </serviceInput>
+                        <link id="lvqkmbyu" targetId="lvqkmbyt"/>
+                     </service>
+                     <service id="lvqkmbz5">
+                        <title>ModifyTasksById</title>
+                        <serviceName>WrikeNativeAPI-Connection:ModifyTasksById</serviceName>
+                        <serviceGUID>6XRnIr5qND7lx9vvYyOkKJ</serviceGUID>
+                        <serviceInput>
+                           <parameter name="task_idsPathParam" source="formula">
+                              <expression language="XQuery">string-join($temp.folderTaskIds, ",")</expression>
+                           </parameter>
+                           <parameter name="customFields" source="formula">
+                              <expression language="XQuery">$temp.updateData</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="lvqkmbz7" targetId="lvqkmbq6"/>
+                     </service>
+                     <assignment id="lvqkmbyt">
+                        <title>listOfTaskIds</title>
+                        <operation source="formula" to="temp.folderTaskIds">
+                           <expression language="XQuery">(: Initialize the variable output.final_copytoChild :)
+let $taskData := $output.task_output[1]/data 
+
+(: Construct the array of objects based on conditions :)
+for $task in $taskData
+(: Return the array of objects :)
+return $task/id
+</expression>
+                        </operation>
+                        <link id="lvqkmbz6" targetId="lvqkmbz5"/>
+                     </assignment>
+                     <assignment id="lvqkmc3f">
+                        <title>Assignment to message</title>
+                        <operation source="constant" to="output.message">All the children have been copied</operation>
+                     </assignment>
+                     <container id="lvqkmbq6" type="exclusive">
+                        <title>checkingTaskPagination</title>
+                        <flow id="lvqkmbqa">
+                           <assignment id="lvqkmbsx">
+                              <title>Assignment to taskTempToken</title>
+                              <operation source="field" to="temp.taskTempToken">output.task_output[1]/nextPageToken</operation>
+                              <link id="lvqkmbzo" targetId="lvqkmbzm"/>
+                           </assignment>
+                           <jumpTo id="lvqkmbzm">
+                              <link id="lvqkmbzn" targetId="a17eMlDhDBsytff4UoJXkewW-lvqapw02"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="lvqkmbqd">
+                           <service id="lvqkmc8v">
+                              <title>ModifyFolderById</title>
+                              <serviceName>WrikeNativeAPI-Connection:ModifyFolderById</serviceName>
+                              <serviceGUID>6XRnIr5qND7lx9vvYyOkKJ</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="folder_idPathParam" source="field" updatable="true">output.root[1]/data[1]/id</parameter>
+                                 <parameter name="customFields" source="formula">
+                                    <expression language="XQuery">let $data :=
+        &lt;object&gt;
+            &lt;id&gt;IEABCEFLJUAEF4SP&lt;/id&gt;
+            &lt;value&gt;Completed&lt;/value&gt;
+        &lt;/object&gt;
+    
+return $data</expression>
+                                 </parameter>
+                              </serviceInput>
+                           </service>
+                           <link id="lvqkmbqe" targetId="lvqkmbq6" type="containerLink"/>
+                        </flow>
+                        <link id="lvqkmbq9" targetId="lvqkmbqa" type="containerLink">
+                           <condition source="formula">
+                              <function name="starts-with">
+                                 <arg name="left">{$output.task_output[1]/nextPageToken}</arg>
+                                 <arg name="right">AEN</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lvqkmc8o" targetId="lvqkmc3f"/>
+                        <link id="lvqkmbqc" targetId="lvqkmbqd" type="containerLink"/>
+                     </container>
+                     <link id="q09f23a7b-2a10-4156-a325-0766e6575f50"
+                           targetId="a17eMlDhDBsytff4UoJXkewW-lvqapvzd"
+                           type="containerLink"/>
+                  </flow>
+                  <flow id="jf9ff4ff6-37cc-4a43-b450-c6c08c15600b">
+                     <assignment id="lvqkmc3q">
+                        <title>Assignment to message</title>
+                        <operation source="constant" to="output.message">Updation failed! CopyToChild column doesn't contain 'Overwrite' value for the given id</operation>
+                     </assignment>
+                     <link id="rcee7854b-4e86-4d67-ae7b-5060eda6b022"
+                           targetId="a17eMlDhDBsytff4UoJXkewW-lvqapvzd"
+                           type="containerLink"/>
+                  </flow>
+                  <link id="m23de215f-c6af-4432-a3c4-fd4e1df00c3f"
+                        targetId="g6f5faa1f-9ffd-46ef-a004-3aa1805f6b60"
+                        type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.isCopyToChildAvailable}</arg>
+                           <arg name="right">true</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lvqkmc3e"
+                        targetId="a17eMlDhDBsytff4UoJXkewW-end-i8414a3c2-2b99-45c9-8c2e-58885c569075"/>
+                  <link id="kb854f37b-8207-4dec-84f7-6d94b3d74d9a"
+                        targetId="jf9ff4ff6-37cc-4a43-b450-c6c08c15600b"
+                        type="containerLink"/>
+               </container>
+               <end id="a17eMlDhDBsytff4UoJXkewW-end-i8414a3c2-2b99-45c9-8c2e-58885c569075">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>7b364a0a-7e2e-443f-acba-ea3799d8301b</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>thiyagaraj.1@wpp.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-05-03T06:14:18Z</ns1:CreationDate>
+               <ns1:ModifiedBy>thiyagaraj.1@wpp.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-05-03T10:00:31Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+    "ids": "[1178586826]"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>7eMlDhDBsytff4UoJXkewW</types1:GUID>
+      <types1:DisplayName>CopyToChild-Offshore</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-05-03T13:47:20.266Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

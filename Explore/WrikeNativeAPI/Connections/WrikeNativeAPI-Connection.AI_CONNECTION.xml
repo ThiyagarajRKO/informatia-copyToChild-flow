@@ -1,0 +1,52 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ARW8UBM7zsZvEIA-gt-76032803-2024-04-30T10:50:37.432Z::conn.xml</types1:EntryId>
+      <types1:Name>WrikeNativeAPI-Connection</types1:Name>
+      <types1:ParentFlowIds>htghGZ5i4rswVYx-gt-95538440-2024-05-03T06:09:01.148Z::pd.xml,pbbfUryzfYtjCtb-gt-98930843-2024-05-03T08:33:23.245Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>thiyagaraj.1@wpp.com</types1:CreatedBy>
+      <types1:CreationDate>2024-04-30T10:50:37Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>thiyagaraj.1@wpp.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-05-03T12:39:49Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/WrikeNativeAPI-Connection/WrikeNativeAPI-Connection.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="WrikeNativeAPI-Connection"
+                     label="WrikeNativeAPI-Connection"
+                     name="WrikeNativeAPI-Connection">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="HostName"
+                          value="https://app-eu.wrike.com/api/v4/"/>
+               <attribute encrypted="false"
+                          name="APIKey"
+                          value="Bearer eyJ0dCI6InAiLCJhbGciOiJIUzI1NiIsInR2IjoiMSJ9.eyJkIjoie1wiYVwiOjExMTgzNzksXCJpXCI6MjEwOTg5LFwiY1wiOjE5ODg4MTMsXCJ1XCI6MTg2MDkzNTgsXCJyXCI6XCJFVVwiLFwic1wiOltcIldcIixcIkZcIixcIklcIixcIlVcIixcIktcIixcIkNcIixcIkRcIixcIk1cIixcIkFcIixcIkxcIixcIlBcIl0sXCJ6XCI6W10sXCJ0XCI6MH0iLCJpYXQiOjE3MTM3NzAyMTZ9.VyW0iaF7bxgEzf4F1TMJ6hLGRopvfcxFToAALa6_SF8"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Wrike_APIs/Wrike_APIs_svcDef.xml"
+                               guid="6gB9cOFW8aFkSfwfmu7cyv"
+                               name="Wrike-APIs"
+                               supportsConnectionTest="false"
+                               uuid="53a059b5-2eba-47ac-ae3d-d167f3f937e5">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>6XRnIr5qND7lx9vvYyOkKJ</types1:GUID>
+      <types1:DisplayName>WrikeNativeAPI-Connection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-05-03T13:47:20.195Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
